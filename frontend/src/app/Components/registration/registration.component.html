@@ -1,0 +1,63 @@
+<h3 align="center"> User Registration</h3>
+<div [hidden]="submitted" class="container center_div">
+    <form #registrationForm="ngForm" >
+
+          <div class="form-group">
+            <label for="userId">User Id</label>
+            <input type="number" class="form-control" id="userId" placeholder="eg:puja"
+            required
+            [(ngModel)]="carsolenauser.userId" name="userId" #userId="ngModel">
+            <span
+            class="help-block"
+            *ngIf="!userId.valid &&  userId.touched">Please enter a valid User Id</span>
+          </div>
+          <div class="form-group">
+            <label for="userFullName">User Full Name</label>
+            <input type="text" class="form-control" id="userFullName" placeholder="eg: Jhon Doe"
+            required
+            [(ngModel)]="carsolenauser.userFullName" name="userFullName" #userFullName="ngModel">
+            <span
+            class="help-block"
+            *ngIf="!userFullName.valid &&  userFullName.touched">Please enter your Name</span>
+            </div>
+
+            <div class="form-group">
+              <label for="useremail">Email</label>
+              <input type="email" class="form-control" id="useremail" placeholder="eg:abc@gamil.com"
+              required
+              [(ngModel)]="carsolenauser.useremail" name="useremail" #useremail="ngModel">
+              <span
+            class="help-block"
+            *ngIf="!useremail.valid &&  useremail.touched">Please enter a valid email</span>
+            </div>
+      <div calss="form-group">
+      <label for="userAddress">Address</label>
+      <textarea type="text" class="form-control" id="userAddress" maxlength="255" placeholder="eg: V.V Puram"
+      required [(ngModel)]="carsolenauser.userAddress" name="userAddress"
+      #userAddress="ngModel"></textarea>
+      </div>
+          <div class="form-group">
+              <label for="phoneNumber">Phone Number</label>
+              <input type="tel" class="form-control" id="userPhone" placeholder="eg:9989785647"
+              required
+              [(ngModel)]="carsolenauser.userPhone" name="userPhone" #userPhone="ngModel">
+              <span
+            class="help-block"
+            *ngIf="!userPhone.valid &&  userPhone.touched">Please enter a valid phone numebr</span>
+            </div>
+
+            <div class="btn-group btn-group-sm">
+
+              <button type="button" class="btn btn-dark" (click)="addRegistration()" [disabled]="!registrationForm.form.valid">Register</button>
+              <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+            </div>
+
+    </form>
+    </div>
+    <div [hidden]="!submitted">
+      <p>User Registered Successfully!</p>
+      <div class="btn-group btn-group-sm">
+          <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+          <button type="button" class="btn btn-dark" (click)="newRegistration(); registrationForm.reset()">Continue</button>
+        </div>
+    </div>

@@ -1,0 +1,21 @@
+.center_div {
+  margin: 0 auto;
+  width: 60%;
+}
+html {
+  font: 14px/1.4 Sans-Serif;
+}
+.header {
+  color: black;
+}
+.help-block {
+  color: orangered;
+
+  margin: -22px;
+  font-size: 12px;
+}
+.btn {
+  background-color: #191970;
+  display: block;
+  width: 18%;
+}
